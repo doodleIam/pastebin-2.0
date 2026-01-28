@@ -103,7 +103,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 flex items-center justify-center p-4 md:p-6">
       <div className="w-full max-w-4xl bg-white shadow-xl rounded-2xl p-6 md:p-8">
-        {/* Header */}
+
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold text-indigo-700">
@@ -127,9 +127,9 @@ function Home() {
           </div>
         </div>
 
-        {/* Main Content Area */}
+      
         <div className="space-y-6">
-          {/* Content Textarea */}
+    
           <div className="relative">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Paste Content *
@@ -154,7 +154,7 @@ function Home() {
             </div>
           </div>
 
-          {/* Optional Fields */}
+    
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -165,7 +165,7 @@ function Home() {
                   type="number"
                   value={ttl}
                   onChange={(e) => setTtl(e.target.value)}
-                  placeholder="Optional - seconds"
+                  placeholder="seconds"
                   min="60"
                   max="604800"
                   className="w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
@@ -173,7 +173,7 @@ function Home() {
                 <span className="absolute left-3 top-3 text-gray-400">⏱️</span>
               </div>
               <p className="text-xs text-gray-500 mt-1">
-                Between 60s and 7 days. Leave empty for no expiration.
+                minimum 1 sec
               </p>
             </div>
 
@@ -186,7 +186,7 @@ function Home() {
                   type="number"
                   value={maxViews}
                   onChange={(e) => setMaxViews(e.target.value)}
-                  placeholder="Optional - number"
+                  placeholder="number"
                   min="1"
                   max="1000"
                   className="w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
@@ -194,12 +194,12 @@ function Home() {
                 <span className="absolute left-3 top-3 text-gray-400">👁️</span>
               </div>
               <p className="text-xs text-gray-500 mt-1">
-                Between 1 and 1000. Leave empty for unlimited views.
+                Between 1 and 1000
               </p>
             </div>
           </div>
 
-          {/* Submit Button */}
+       
           <button
             onClick={handleCreatePaste}
             disabled={isSubmitting || !content.trim()}
@@ -222,7 +222,7 @@ function Home() {
             )}
           </button>
 
-          {/* Error Display */}
+        
           {error && (
             <div className="p-4 bg-red-50 border border-red-200 rounded-lg animate-pulse">
               <p className="text-red-700 font-medium flex items-center">
@@ -232,7 +232,7 @@ function Home() {
             </div>
           )}
 
-          {/* Generated URL */}
+       
           {url && (
             <div className="p-5 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg shadow-sm animate-fade-in">
               <p className="font-semibold text-green-800 mb-2 flex items-center">
@@ -259,7 +259,7 @@ function Home() {
             </div>
           )}
 
-          {/* History Section */}
+    
           {history.length > 0 && (
             <div className="mt-8 border-t pt-6">
               <div className="flex justify-between items-center mb-4">
@@ -307,7 +307,6 @@ function Home() {
           )}
         </div>
 
-        {/* Footer */}
         <div className="mt-8 pt-6 border-t text-center text-gray-500 text-sm">
           <p>All pastes are encrypted and automatically deleted based on expiration settings.</p>
         </div>
